@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+    Lenguaje: HTML, CSS y JavaScript
+
+IDE recomendado: Visual Studio Code
+
+Nivel: Inicial
+
+Enunciado:
+
+Haz una web simulador de cuota de hipoteca. Para ello, el usuario proporcionará: cantidad (€), número de cuotas (meses) y tipo de interés (%).
+La página devolverá el importe de la cuota mensual.
+
+Opcional: puedes usar un slider en el número de cuotas y en el tipo de interés.
+
+Consideraciones: Debemos poder probar el ejercicio, ya sea con jsfiddle, stackblitz o publicado en algún sitio.-->
+
+    <fieldset>
+        <Legend>Simulador de cuota de hipoteca</Legend>
+        <label for="cantidad">Cantidad</label>
+        <input type="number" id="cantidad" name="cantidad" />
+        <label for="cuotas">Cuotas</label>
+        <input type="number" id="cuotas" name="cuotas" />
+        <label for="interes">Interés</label>
+        <input type="number" id="interes" name="interes" /> <br><br>
+        <button id="calcular">Calcular</button><br><br>
+        <div id="resultado"></div>
+    </fieldset>
+
+
+
+
+    <script>
+        const calcular = document.getElementById("calcular");
+        calcular.addEventListener("click", () => {
+            const cantidad = document.getElementById("cantidad").value;
+            const cuotas = document.getElementById("cuotas").value;
+            const interes = document.getElementById("interes").value;
+            const cuota = cantidad / cuotas + (cantidad * interes) / 100;
+            const resultado = document.getElementById("resultado");
+            resultado.innerHTML = `La cuota mensual es de ${cuota}€`;
+            
+        });
+
+
+    </script>
+
+
+  </body>
+</html>
